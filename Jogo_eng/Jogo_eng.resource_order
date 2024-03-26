@@ -29,6 +29,7 @@
     {"name":"P2Happy","order":3,"path":"objects/P2Happy/P2Happy.yy",},
     {"name":"Vida","order":2,"path":"objects/Vida/Vida.yy",},
     {"name":"Vida2","order":3,"path":"objects/Vida2/Vida2.yy",},
+    {"name":"EndGame","order":2,"path":"rooms/EndGame/EndGame.yy",},
     {"name":"Start","order":1,"path":"rooms/Start/Start.yy",},
     {"name":"Sprite10","order":1,"path":"sprites/Sprite10/Sprite10.yy",},
     {"name":"Sprite11","order":6,"path":"sprites/Sprite11/Sprite11.yy",},

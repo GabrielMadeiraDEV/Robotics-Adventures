@@ -52,6 +52,7 @@
     {"id":{"name":"Vida2","path":"objects/Vida2/Vida2.yy",},},
     {"id":{"name":"Wood","path":"objects/Wood/Wood.yy",},},
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
+    {"id":{"name":"EndGame","path":"rooms/EndGame/EndGame.yy",},},
     {"id":{"name":"Start","path":"rooms/Start/Start.yy",},},
     {"id":{"name":"Sprite_ground","path":"sprites/Sprite_ground/Sprite_ground.yy",},},
     {"id":{"name":"Sprite10","path":"sprites/Sprite10/Sprite10.yy",},},
@@ -72,6 +73,7 @@
   "RoomOrderNodes":[
     {"roomId":{"name":"Start","path":"rooms/Start/Start.yy",},},
     {"roomId":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
+    {"roomId":{"name":"EndGame","path":"rooms/EndGame/EndGame.yy",},},
   ],
   "templateType":"game",
   "TextureGroups":[
