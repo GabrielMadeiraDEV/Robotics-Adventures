@@ -16,3 +16,12 @@ globalvar ultimoPressionamentoWASD;
 
 
 
+// Função para verificar colisão com qualquer objeto na lista
+function place_meeting_any(_x, _y, _obj_list) {
+    for (var i = 0; i < ds_list_size(_obj_list); i++) {
+        if (place_meeting(_x, _y, _obj_list[| i])) {
+            return true;
+        }
+    }
+    return false;
+}

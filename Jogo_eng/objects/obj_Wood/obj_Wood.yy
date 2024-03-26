@@ -1,11 +1,11 @@
 {
   "$GMObject":"",
-  "%Name":"Wood",
+  "%Name":"obj_Wood",
   "eventList":[
     {"$GMEvent":"","%Name":"","collisionObjectId":{"name":"obj_Player1","path":"objects/obj_Player1/obj_Player1.yy",},"eventNum":0,"eventType":4,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"Wood",
+  "name":"obj_Wood",
   "overriddenProperties":[],
   "parent":{
     "name":"Sistemas",
