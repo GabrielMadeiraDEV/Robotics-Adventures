@@ -39,8 +39,8 @@
   "resourceVersion":"2.0",
   "solid":true,
   "spriteId":{
-    "name":"Sprite9",
-    "path":"sprites/Sprite9/Sprite9.yy",
+    "name":"spr_p2idle",
+    "path":"sprites/spr_p2idle/spr_p2idle.yy",
   },
   "spriteMaskId":null,
   "visible":true,

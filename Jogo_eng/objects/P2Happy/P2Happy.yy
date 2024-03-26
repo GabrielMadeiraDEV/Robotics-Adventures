@@ -28,8 +28,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"Sprite15",
-    "path":"sprites/Sprite15/Sprite15.yy",
+    "name":"spr_p2happy",
+    "path":"sprites/spr_p2happy/spr_p2happy.yy",
   },
   "spriteMaskId":null,
   "visible":true,
