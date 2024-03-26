@@ -9,3 +9,9 @@ vida1=6
 image_speed=0
 invulnerabilidade=0;
 
+//idle animation
+globalvar limiteSemPressionarWASD = 17.2;
+globalvar ultimoPressionamentoWASD;
+
+
+

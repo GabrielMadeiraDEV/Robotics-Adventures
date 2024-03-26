@@ -61,6 +61,14 @@ image_yscale = yscale;
 #endregion
 // Verifica se a vida do jogador chegou a 0
 
+//idle animation :)
+#region
+if(keyboard_check(vk_anykey)){
+	current_time = tempultpress;
+	}
+if(current_time - tempultpress>= templimpress){
+	image_speed = 1;
+}
 
 
 
