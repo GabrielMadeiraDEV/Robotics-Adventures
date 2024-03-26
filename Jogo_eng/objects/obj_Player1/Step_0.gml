@@ -1,19 +1,20 @@
-/// @description Movimento
-
 #region Controles
-var key_right = keyboard_check(ord("D")); // Move para a direita
-var key_left = keyboard_check(ord("A")); // Move para a esquerda
-var key_down = keyboard_check(ord("S")); // Agacha
-var key_jump = keyboard_check(ord("W")); // Pula
+var key_right = keyboard_check(ord("D"));
+var key_left = keyboard_check(ord("A"));
+var key_down = keyboard_check(ord("S"));
+var key_jump = keyboard_check(ord("W"));
 #endregion
 
 #region Movimentação
 var _move = key_right - key_left;
 hspd = _move * spd;
-vspd += grv;
+if (!place_meeting(x + hspd, y, obj_wall)) {
+    x += hspd;
+}
 
+if (vspd < 10) vspd += grv; // Limita a velocidade de queda
 
-// Verifica a colisão na direção vertical
+// Colisão vertical
 if (place_meeting(x, y + vspd, obj_wall)) {
     while (!place_meeting(x, y + sign(vspd), obj_wall)) {
         y += sign(vspd);
@@ -22,53 +23,34 @@ if (place_meeting(x, y + vspd, obj_wall)) {
 }
 y += vspd;
 
-// Verifica a colisão na direção horizontal
-if (place_meeting(x + hspd, y, obj_wall)) {
-    while (!place_meeting(x + sign(hspd), y, obj_wall)) {
-        x += sign(hspd);
-    }
-    hspd = 0;
-}
-x += hspd;
-
+// Pulo
 if (place_meeting(x, y + 1, obj_wall) && key_jump) {
-    vspd -= 8;	
+    vspd = -8;
 }
 #endregion
 
 #region Sprites
-// Definir a largura e a altura desejadas
-var desired_width = 64; // Substitua 64 pelo valor que você deseja
-var desired_height = 64; // Substitua 64 pelo valor que você deseja
-
-// Definir a escala desejada
-var xscale = desired_width / sprite_get_width(sprite_index);
-var yscale = desired_height / sprite_get_height(sprite_index);
-
-// Aplicar a escala
-image_xscale = xscale;
-image_yscale = yscale;
-
-
-// Alterar o sprite com base na velocidade horizontal (hspd)
-//if (hspd == 0) {
-   // sprite_index = spr_player_idle; // Muda para o sprite de inatividade
-//} else if (hspd > 0) {
-   // sprite_index = spr_player_MR; // Muda para o sprite de andar para a direita
-//} else {
-  //  sprite_index = spr_player_ML; // Muda para o sprite de andar para a esquerda
+// Atualiza o sprite do jogador baseado na direção do movimento
+if (key_right) {
+    sprite_index = spr_player1move; // Sprite de movimento para a direita
+    image_xscale = 1; // Sem espelhamento
+} else if (key_left) {
+    sprite_index = spr_player1move; // Sprite de movimento para a esquerda
+    image_xscale = -1; // Espelhamento horizontal
+} //else if (key_down) {
+   // sprite_index = spr_player1move; // Substitua por um sprite de agachar, se houver
+    // Não esqueça de ajustar a colisão para o estado agachado
 //}
-#endregion
-// Verifica se a vida do jogador chegou a 0
-
-//idle animation :)
-#region
-if(keyboard_check(vk_anykey)){
-	current_time = tempultpress;
-	}
-if(current_time - tempultpress>= templimpress){
-	image_speed = 1;
+else {
+    sprite_index = spr_p1idlle; // Sprite de inatividade
+    image_xscale = 1; // Sem espelhamento
 }
 
-
-
+// Redimensionamento dos sprites
+//var desired_width = 164;
+var desired_height = 164;
+//var xscale = desired_width / sprite_get_width(sprite_index);
+var yscale = desired_height / sprite_get_height(sprite_index);
+//image_xscale *= xscale;
+image_yscale = yscale;
+#endregion

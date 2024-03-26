@@ -6,11 +6,12 @@ grv=0.4;
 vidap1=6
 globalvar vida1;
 vida1=6
-image_speed=0
+
 invulnerabilidade=0;
 
 //idle animation
-globalvar limiteSemPressionarWASD = 17.2;
+globalvar limiteSemPressionarWASD;
+limiteSemPressionarWASD=17.2
 globalvar ultimoPressionamentoWASD;
 
 
