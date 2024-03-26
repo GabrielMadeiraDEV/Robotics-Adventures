@@ -18,4 +18,6 @@ if (vida1=1){
 }
 if (vida1=0){
 	image_index = 6;
+	room_goto(EndGame)
 }
+

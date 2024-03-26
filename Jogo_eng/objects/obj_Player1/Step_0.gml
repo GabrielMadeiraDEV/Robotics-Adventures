@@ -63,7 +63,4 @@ image_yscale = yscale;
 
 
 
-if (vidap1 <= 0) {
-    // Termina o jogo
-    game_end();
-}
+

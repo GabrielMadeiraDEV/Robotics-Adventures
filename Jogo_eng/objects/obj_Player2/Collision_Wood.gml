@@ -3,7 +3,7 @@
 if (invulnerabilidade <= 0) {
    vidap2 -= 1;
    vida2=vidap2;
-   invulnerabilidade = 60; // 60 steps é aproximadamente 1 segundo
+   invulnerabilidade = 25; // 60 steps é aproximadamente 1 segundo
 }
 
 // Atualiza a variável de tempo de invulnerabilidade
