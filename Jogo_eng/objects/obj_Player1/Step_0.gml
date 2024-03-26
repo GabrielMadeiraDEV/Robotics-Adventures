@@ -51,13 +51,12 @@ image_yscale = yscale;
 
 
 // Alterar o sprite com base na velocidade horizontal (hspd)
-//if (hspd == 0) {
-   // sprite_index = spr_player_idle; // Muda para o sprite de inatividade
-//} else if (hspd > 0) {
-   // sprite_index = spr_player_MR; // Muda para o sprite de andar para a direita
-//} else {
-  //  sprite_index = spr_player_ML; // Muda para o sprite de andar para a esquerda
-//}
+if (hspd == 0) {
+    sprite_index = spr_player1idlle; // Muda para o sprite de inatividade/} else if (hspd > 0) {
+   
+} else {
+     sprite_index = spr_player1move; // Muda para o sprite de andar para a direita
+}
 #endregion
 // Verifica se a vida do jogador chegou a 0
 
