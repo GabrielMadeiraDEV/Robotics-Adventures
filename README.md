@@ -3,7 +3,7 @@
 ## Sobre o Jogo
 Robotics Adventures é um jogo de plataforma educativo que ensina os jogadores sobre os fundamentos da eletricidade de uma maneira divertida e interativa. Com dois robôs representando cargas elétricas opostas - um positivo e um negativo - os jogadores aprendem quais materiais são condutores ou isolantes enquanto avançam pelos níveis do jogo.
 
-#https://github.com/Galibinja/Robotics-Adventures/blob/93cf1bfb9aacda9ef137700c3607a569ef7fe905/Personagens/robot%2B.png
+![Robo Positivo][https://github.com/Galibinja/Robotics-Adventures/blob/93cf1bfb9aacda9ef137700c3607a569ef7fe905/Personagens/robot%2B.png]
 ## Como Jogar
 - **Exploração:** Descubra quais materiais conduzem eletricidade enquanto guia os robôs através dos níveis.
 - **Resolução de Problemas:** Utilize o conhecimento sobre condutores e isolantes para resolver quebra-cabeças e progredir no jogo.
