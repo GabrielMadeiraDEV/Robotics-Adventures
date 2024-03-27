@@ -1,7 +1,7 @@
 {
   "$GMSprite":"",
   "%Name":"Sprite5",
-  "bboxMode":1,
+  "bboxMode":0,
   "bbox_bottom":63,
   "bbox_left":0,
   "bbox_right":63,
@@ -76,7 +76,7 @@
     "visibleRange":null,
     "volume":1.0,
     "xorigin":33,
-    "yorigin":-3,
+    "yorigin":3,
   },
   "swatchColours":null,
   "swfPrecision":2.525,
