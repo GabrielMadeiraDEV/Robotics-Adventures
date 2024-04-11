@@ -7,7 +7,7 @@ vidap1=6
 globalvar vida1;
 vida1=6
 
-invulnerabilidade=0;
+
 
 //idle animation
 globalvar limiteSemPressionarWASD;

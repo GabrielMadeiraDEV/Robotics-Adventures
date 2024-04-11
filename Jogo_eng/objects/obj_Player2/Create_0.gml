@@ -9,7 +9,7 @@ globalvar vida2;
 vida2=6
 
 
-invulnerabilidade=0;
+
 
 // Função para verificar colisão com qualquer objeto na lista
 function place_meeting_any(_x, _y, _obj_list) {

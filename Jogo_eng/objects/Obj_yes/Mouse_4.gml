@@ -1,5 +1,6 @@
 /// @description Inserir descrição aqui
-room_goto(rm_teste)
+game_restart()
+room_goto(Start)
 
 
 

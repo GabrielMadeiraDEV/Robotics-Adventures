@@ -8,7 +8,9 @@ var key_jump = keyboard_check(ord("W"));
 var collision_objects = ds_list_create();
 ds_list_add(collision_objects, obj_wall);
 ds_list_add(collision_objects, obj_Player2);
-ds_list_add(collision_objects, obj_Wood); // Adicione todos os objetos desejados
+// Lista de objetos para colisão que dao dano
+ds_list_add(collision_objects, obj_dano);
+
 
 #region Movimentação
 var _move = key_right - key_left;

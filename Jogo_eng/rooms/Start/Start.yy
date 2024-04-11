@@ -34,8 +34,8 @@
   ],
   "name":"Start",
   "parent":{
-    "name":"Cenas",
-    "path":"folders/Cenas.yy",
+    "name":"Eventos",
+    "path":"folders/Cenas/Eventos.yy",
   },
   "parentRoom":null,
   "physicsSettings":{
