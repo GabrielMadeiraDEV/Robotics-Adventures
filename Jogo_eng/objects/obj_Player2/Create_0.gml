@@ -4,7 +4,7 @@ hspd=0;
 vspd=0;
 grv=0.4;
 
-vidap2=6
+
 globalvar vida2;
 vida2=6
 

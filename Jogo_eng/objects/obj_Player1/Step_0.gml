@@ -9,7 +9,7 @@ var collision_objects = ds_list_create();
 ds_list_add(collision_objects, obj_wall);
 ds_list_add(collision_objects, obj_Player2);
 // Lista de objetos para colisão que dao dano
-ds_list_add(collision_objects, obj_dano);
+ds_list_add(collision_objects, obj_obs1);
 
 
 #region Movimentação
