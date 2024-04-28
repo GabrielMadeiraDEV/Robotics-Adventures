@@ -1,10 +1,7 @@
 {
   "$GMObject":"",
   "%Name":"obj_obs1",
-  "eventList":[
-    {"$GMEvent":"","%Name":"","collisionObjectId":{"name":"obj_Player1","path":"objects/obj_Player1/obj_Player1.yy",},"eventNum":0,"eventType":4,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"","%Name":"","collisionObjectId":{"name":"obj_Player2","path":"objects/obj_Player2/obj_Player2.yy",},"eventNum":0,"eventType":4,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-  ],
+  "eventList":[],
   "managed":true,
   "name":"obj_obs1",
   "overriddenProperties":[],
@@ -29,11 +26,14 @@
   "properties":[],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
-  "solid":false,
+  "solid":true,
   "spriteId":{
     "name":"spr_obs1",
     "path":"sprites/spr_obs1/spr_obs1.yy",
   },
   "spriteMaskId":null,
+  "tags":[
+    "obj_dano",
+  ],
   "visible":true,
 }

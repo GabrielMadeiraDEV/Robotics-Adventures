@@ -1,19 +1,17 @@
-/// @description Movimento
-
 #region Controles
-var key_right = keyboard_check(vk_right); // Move para a direita
-var key_left = keyboard_check(vk_left); // Move para a esquerda
-var key_down = keyboard_check(vk_down); // Agacha
-var key_jump = keyboard_check(vk_up); // Pula
+var key_right = keyboard_check(vk_right);
+var key_left = keyboard_check(vk_left);
+var key_down = keyboard_check(vk_down);
+var key_jump = keyboard_check(vk_up);
 #endregion
-
-
+#region OBJ/COL
 // Lista de objetos para colisão
 var collision_objects = ds_list_create();
 ds_list_add(collision_objects, obj_wall);
 ds_list_add(collision_objects, obj_Player1);
-ds_list_add(collision_objects, obj_dano); // Adicione todos os objetos desejados
-
+// Lista de objetos para colisão que dao dano
+ds_list_add(collision_objects, obj_obs1);
+#endregion
 #region Movimentação
 var _move = key_right - key_left;
 hspd = _move * spd;
@@ -34,7 +32,26 @@ y += vspd;
 
 
 #endregion
+#region Dano
+var damage_objects = ds_list_create();
+ds_list_add(damage_objects, obj_obs1);
 
+// Reduz o temporizador de invulnerabilidade se o jogador estiver invulnerável
+if (invulneravel) {
+    invulneravel_timer -= 1;
+    if (invulneravel_timer <= 0) {
+        invulneravel = false; // Remove a invulnerabilidade quando o temporizador chegar a zero
+    }
+}
+else if (place_meeting_any(x, y+ vspd, damage_objects)) {
+    vida2 -= 1; // Diminui a vida do jogador
+    invulneravel = true; // Define o jogador como invulnerável
+    invulneravel_timer = 35; // Define a duração da invulnerabilidade (0.25 segundos)
+}
+
+
+#endregion
+#region Animação
 // Variáveis de estado
 var on_ground = place_meeting_any(x, y + 1, collision_objects);
 var is_jumping = false;
@@ -61,30 +78,29 @@ if (move_delay > 0 && !key_left && !key_right) {
 
 // Lógica de animação
 if (is_jumping || vspd < 0) {
-    // Pulo
     sprite_index = spr_p2jump;
     image_xscale = (hspd < 0) ? -1 : 1;
 } else if (!is_jumping && vspd > 0) {
-    // Queda
     sprite_index = spr_p2idle;
     image_xscale = (hspd < 0) ? -1 : 1;
-} else if (on_ground) {
-    if (key_right) {
-        // Movimento para a direita
+} 
+    
+
+else {
+	if(on_ground){
+        sprite_index = spr_p2idle;
+        image_xscale = 1;
+	}
+	if (key_right&&on_ground) {
         sprite_index = spr_player2move;
         image_xscale = 1;
-    } else if (key_left) {
-        // Movimento para a esquerda
+    } else if (key_left&&on_ground) {
         sprite_index = spr_player2move;
         image_xscale = -1;
-    } else {
-        // Parado
-        sprite_index = spr_p2idle;
-       image_xscale=-1
+    } 
     }
-}
-
 // Redimensionamento dos sprites
 var desired_height = 164;
 var yscale = desired_height / sprite_get_height(sprite_index);
 image_yscale = yscale;
+#endregion

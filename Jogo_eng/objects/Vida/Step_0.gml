@@ -1,3 +1,4 @@
+vida1 = obj_Player1.vida1
 if (vida1=6){
 	image_index = 0;
 }

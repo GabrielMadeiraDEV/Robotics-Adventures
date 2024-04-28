@@ -3,11 +3,9 @@ spd=5;
 hspd=0;
 vspd=0;
 grv=0.4;
-
-globalvar vida1;
-vida1=6
-
-
+vida1 = 6
+invulneravel = false; // Define o jogador como não invulnerável inicialmente
+invulneravel_timer = 0; // Inicializa o temporizador de invulnerabilidade
 
 //idle animation
 globalvar limiteSemPressionarWASD;

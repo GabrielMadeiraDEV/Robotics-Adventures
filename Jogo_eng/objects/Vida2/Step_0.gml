@@ -1,3 +1,4 @@
+vida2 = obj_Player2.vida2
 if (vida2=6){
 	image_index = 0;
 }
@@ -20,3 +21,4 @@ if (vida2=0){
 	image_index = 6;
 	room_goto(EndGame)
 }
+

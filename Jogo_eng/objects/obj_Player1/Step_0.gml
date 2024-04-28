@@ -4,14 +4,15 @@ var key_left = keyboard_check(ord("A"));
 var key_down = keyboard_check(ord("S"));
 var key_jump = keyboard_check(ord("W"));
 #endregion
+#region Objetos/Colisão
 // Lista de objetos para colisão
 var collision_objects = ds_list_create();
 ds_list_add(collision_objects, obj_wall);
 ds_list_add(collision_objects, obj_Player2);
-// Lista de objetos para colisão que dao dano
 ds_list_add(collision_objects, obj_obs1);
 
 
+#endregion
 #region Movimentação
 var _move = key_right - key_left;
 hspd = _move * spd;
@@ -32,7 +33,26 @@ y += vspd;
 
 
 #endregion
+#region Dano
+var damage_objects = ds_list_create();
+ds_list_add(damage_objects, obj_obs1);
 
+// Reduz o temporizador de invulnerabilidade se o jogador estiver invulnerável
+if (invulneravel) {
+    invulneravel_timer -= 1;
+    if (invulneravel_timer <= 0) {
+        invulneravel = false; // Remove a invulnerabilidade quando o temporizador chegar a zero
+    }
+}
+else if (place_meeting_any(x, y+ vspd, damage_objects)) {
+    vida1 -= 1; // Diminui a vida do jogador
+    invulneravel = true; // Define o jogador como invulnerável
+    invulneravel_timer = 35; // Define a duração da invulnerabilidade (0.25 segundos)
+}
+
+
+#endregion
+#region Animação
 // Variáveis de estado
 var on_ground = place_meeting_any(x, y + 1, collision_objects);
 var is_jumping = false;
@@ -84,3 +104,5 @@ else {
 var desired_height = 164;
 var yscale = desired_height / sprite_get_height(sprite_index);
 image_yscale = yscale;
+#endregion
+
