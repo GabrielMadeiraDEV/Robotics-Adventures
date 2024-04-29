@@ -10,7 +10,8 @@ var collision_objects = ds_list_create();
 ds_list_add(collision_objects, obj_wall);
 ds_list_add(collision_objects, obj_Player2);
 ds_list_add(collision_objects, obj_obs1);
-
+ds_list_add(collision_objects, Plataform2);
+ds_list_add(collision_objects, Plataform1);
 
 #endregion
 #region Movimentação

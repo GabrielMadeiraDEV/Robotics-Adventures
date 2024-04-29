@@ -9,8 +9,9 @@ var key_jump = keyboard_check(vk_up);
 var collision_objects = ds_list_create();
 ds_list_add(collision_objects, obj_wall);
 ds_list_add(collision_objects, obj_Player1);
-// Lista de objetos para colisão que dao dano
 ds_list_add(collision_objects, obj_obs1);
+ds_list_add(collision_objects, Plataform2);
+ds_list_add(collision_objects, Plataform1);
 #endregion
 #region Movimentação
 var _move = key_right - key_left;
