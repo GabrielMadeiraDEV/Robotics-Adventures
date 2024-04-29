@@ -1,1 +1,1 @@
-room_goto(LV_Incomp)
+room_goto(rm_teste)

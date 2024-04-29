@@ -102,7 +102,7 @@ else {
     } 
     }
 // Redimensionamento dos sprites
-var desired_height = 164;
+var desired_height = 74;
 var yscale = desired_height / sprite_get_height(sprite_index);
 image_yscale = yscale;
 #endregion
