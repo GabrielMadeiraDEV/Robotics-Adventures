@@ -4,6 +4,7 @@ var key_left = keyboard_check(ord("A"));
 var key_down = keyboard_check(ord("S"));
 var key_jump = keyboard_check(ord("W"));
 #endregion
+
 #region Objetos/Colisão
 // Lista de objetos para colisão
 var collision_objects = ds_list_create();
@@ -12,28 +13,44 @@ ds_list_add(collision_objects, obj_Player2);
 ds_list_add(collision_objects, obj_obs1);
 ds_list_add(collision_objects, Plataform2);
 ds_list_add(collision_objects, Plataform1);
-
 #endregion
-#region Movimentação
+
+#region Movimentação Horizontal
 var _move = key_right - key_left;
-hspd = _move * spd;
-if (!place_meeting_any(x + hspd, y, collision_objects)) {
-    x += hspd;
-}
+var hspd = _move * spd;
 
-if (vspd < 10) vspd += grv; // Limita a velocidade de queda
-
-// Colisão vertical
-if (place_meeting_any(x, y + vspd,collision_objects)) {
-    while (!place_meeting_any(x, y + sign(vspd), collision_objects)) {
-        y += sign(vspd);
+if (hspd != 0) {
+    var hspd_sign = sign(hspd);
+    while (!place_meeting_any(x + hspd_sign, y, collision_objects)) {
+        x += hspd_sign;
+        hspd -= hspd_sign;
+        if (hspd == 0) break;
     }
-    vspd = 0;
 }
-y += vspd;
-
-
 #endregion
+
+#region Gravidade
+if (vspd < 10) {
+    vspd += grv; // Limita a velocidade de queda
+}
+#endregion
+
+#region Movimentação Vertical
+if (vspd != 0) {
+    var vspd_sign = sign(vspd);
+    while (!place_meeting_any(x, y + vspd_sign, collision_objects)) {
+        y += vspd_sign;
+        vspd -= vspd_sign;
+        if (vspd == 0) break;
+    }
+    if (place_meeting_any(x, y + vspd_sign, collision_objects)) {
+        vspd = 0;
+    }
+}
+
+y += vspd;
+#endregion
+
 #region Dano
 var damage_objects = ds_list_create();
 ds_list_add(damage_objects, obj_obs1);
