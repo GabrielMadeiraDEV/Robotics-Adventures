@@ -1,5 +1,5 @@
 {
-  "$GMRoom":"v1",
+  "$GMRoom":"",
   "%Name":"LV_Incomp",
   "creationCodeFile":"",
   "inheritCode":false,
