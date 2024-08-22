@@ -22,3 +22,12 @@ else
 
 	audio_sound_gain(snd_amb_wind, vol_wind, 2000);
 }
+if (obj_player.hp >= 1){
+if (obj_player.hp < 3){
+if (obj_player.coins > 24) {
+	obj_player.hp = obj_player.hp + 1
+	obj_player.coins= obj_player.coins - 25
+}
+
+}
+}

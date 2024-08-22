@@ -25,3 +25,4 @@ for (var i = obj_player.hp; i > 0; --i) {
 	
 	_x_pos += _width;
 }
+

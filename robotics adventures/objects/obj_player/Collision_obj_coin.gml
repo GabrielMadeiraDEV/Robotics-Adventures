@@ -10,3 +10,4 @@ audio_play_sound(snd_coin_collect_01, 0, 0);
 
 // Destroy the 'other' instance, which is the coin.
 instance_destroy(other);
+

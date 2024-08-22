@@ -9,6 +9,7 @@ if (bbox_top > room_height)
 	// If the player still has hp left,
 	if (hp > 0)
 	{
+		
 		// This moves the player to the position stored in the grounded_x and _y variables,
 		// which is the position when it was last on ground.
 		x = grounded_x;
